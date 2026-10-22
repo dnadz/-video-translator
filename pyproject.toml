@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "localvideoai"
+version = "0.22.4"
+description = "Local Windows 11 AI video translation and subtitle workstation"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "PySide6>=6.7,<6.10",
+    "imageio-ffmpeg>=0.5",
+    "faster-whisper>=1.1",
+    "rapidocr>=3.9",
+    "onnxruntime>=1.17",
+    "ctranslate2>=4.5",
+    "sentencepiece>=0.2",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+]
+
+[project.scripts]
+localvideoai = "localvideoai.app:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q -m \"not long_media\""
+markers = [
+    "long_media: 1-hour / 2-hour speech tests already passed in Phase 6",
+]

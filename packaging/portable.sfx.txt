@@ -1,0 +1,8 @@
+;!@Install@!UTF-8!
+Title="LocalVideoAI Translator 便携版"
+BeginPrompt="将解压 LocalVideoAI 到当前目录下的 LocalVideoAI 文件夹，然后可以直接双击 LocalVideoAI.exe 运行。不需要安装 Python、Node 或 FFmpeg。"
+ExtractTitle="正在解压 LocalVideoAI"
+GUIFlags="8+32+64+256+2048"
+InstallPath="%H%%-%\\LocalVideoAI"
+RunProgram="LocalVideoAI.exe"
+;!@InstallEnd@!

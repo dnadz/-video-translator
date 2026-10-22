@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "kind": "translation_memory",
+  "entries": [
+    {"source": "Good morning.", "target": "早上好。", "source_lang": "en", "target_lang": "zh"},
+    {"source": "Good morning", "target": "早上好。", "source_lang": "en", "target_lang": "zh"},
+    {"source": "Good afternoon.", "target": "下午好。", "source_lang": "en", "target_lang": "zh"},
+    {"source": "Good afternoon", "target": "下午好。", "source_lang": "en", "target_lang": "zh"},
+    {"source": "Good evening.", "target": "晚上好。", "source_lang": "en", "target_lang": "zh"},
+    {"source": "Good evening", "target": "晚上好。", "source_lang": "en", "target_lang": "zh"},
+    {"source": "Good night.", "target": "晚安。", "source_lang": "en", "target_lang": "zh"},
+    {"source": "Good night", "target": "晚安。", "source_lang": "en", "target_lang": "zh"}
+  ]
+}

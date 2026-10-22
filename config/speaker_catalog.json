@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "engine": "onnx-embedding",
+  "model": {
+    "id": "3dspeaker-eres2net-zh-16k",
+    "filename": "3dspeaker_speech_eres2net_base_sv_zh-cn_3dspeaker_16k.onnx",
+    "urls": [
+      "https://github.com/k2-fsa/sherpa-onnx/releases/download/speaker-recongition-models/3dspeaker_speech_eres2net_base_sv_zh-cn_3dspeaker_16k.onnx"
+    ]
+  }
+}

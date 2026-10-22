@@ -1,0 +1,95 @@
+{
+  "engine": "ctranslate2",
+  "notes": "Language pairs are data, not hardcoded in TranslationEngine. Extra languages = extra catalog rows plus local model dirs.",
+  "languages": [
+    {"code": "zh", "name": "中文"},
+    {"code": "en", "name": "English"},
+    {"code": "ja", "name": "日本語"}
+  ],
+  "models": [
+    {
+      "id": "argos-zh-en",
+      "from": "zh",
+      "to": "en",
+      "dir": "argos-zh-en",
+      "family": "opus-mt",
+      "tokenizer": "sentencepiece",
+      "download": {
+        "filename": "translate-zh_en-1_9.argosmodel",
+        "urls": [
+          "https://argos-net.com/v1/translate-zh_en-1_9.argosmodel",
+          "https://data.argosopentech.com/argospm/v1/translate-zh_en-1_9.argosmodel"
+        ]
+      }
+    },
+    {
+      "id": "argos-en-zh",
+      "from": "en",
+      "to": "zh",
+      "dir": "argos-en-zh",
+      "family": "opus-mt",
+      "tokenizer": "sentencepiece",
+      "download": {
+        "filename": "translate-en_zh-1_9.argosmodel",
+        "urls": [
+          "https://argos-net.com/v1/translate-en_zh-1_9.argosmodel",
+          "https://data.argosopentech.com/argospm/v1/translate-en_zh-1_9.argosmodel"
+        ]
+      }
+    },
+    {
+      "id": "argos-ja-en",
+      "from": "ja",
+      "to": "en",
+      "dir": "argos-ja-en",
+      "family": "opus-mt",
+      "tokenizer": "sentencepiece",
+      "download": {
+        "filename": "translate-ja_en-1_1.argosmodel",
+        "urls": [
+          "https://argos-net.com/v1/translate-ja_en-1_1.argosmodel",
+          "https://data.argosopentech.com/argospm/v1/translate-ja_en-1_1.argosmodel"
+        ]
+      }
+    },
+    {
+      "id": "argos-en-ja",
+      "from": "en",
+      "to": "ja",
+      "dir": "argos-en-ja",
+      "family": "opus-mt",
+      "tokenizer": "sentencepiece",
+      "download": {
+        "filename": "translate-en_ja-1_1.argosmodel",
+        "urls": [
+          "https://argos-net.com/v1/translate-en_ja-1_1.argosmodel",
+          "https://data.argosopentech.com/argospm/v1/translate-en_ja-1_1.argosmodel"
+        ]
+      }
+    },
+    {
+      "id": "opus-mt-ja-zh",
+      "from": "ja",
+      "to": "zh",
+      "dir": "opus-mt-ja-zh",
+      "family": "opus-mt",
+      "tokenizer": "sentencepiece",
+      "download": {
+        "filename": "opus-mt-ja-zh.zip",
+        "urls": [
+          "https://object.pouta.csc.fi/OPUS-MT-models/ja-zh/opus-2020-01-29.zip",
+          "https://huggingface.co/Helsinki-NLP/opus-mt-ja-zh"
+        ]
+      }
+    }
+  ],
+  "routes": [
+    {"from": "zh", "to": "en", "hops": ["argos-zh-en"]},
+    {"from": "en", "to": "zh", "hops": ["argos-en-zh"]},
+    {"from": "ja", "to": "en", "hops": ["argos-ja-en"]},
+    {"from": "en", "to": "ja", "hops": ["argos-en-ja"]},
+    {"from": "ja", "to": "zh", "hops": ["opus-mt-ja-zh"]},
+    {"from": "ja", "to": "zh", "hops": ["argos-ja-en", "argos-en-zh"]},
+    {"from": "zh", "to": "ja", "hops": ["argos-zh-en", "argos-en-ja"]}
+  ]
+}
